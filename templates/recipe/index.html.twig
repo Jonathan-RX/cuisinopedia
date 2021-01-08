@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recipe index{% endblock %}
+
+{% block body %}
+    <div class="container" class="pt-10">
+        <h1>Recipe index</h1>
+
+
+
+            {% for recipe in recipes %}
+                <div class="card" id="{{ recipe.id }}" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="{{ recipe.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ recipe.name }}</h5>
+                        <i>Créé le {{ recipe.createdTime ? recipe.createdTime|date('H:i:s') : '' }}</i>
+                        <p class="card-text">{{ recipe.description }}</p>
+                        <a href="{{ path('recipe_show', {'id': recipe.id}) }}" class="btn btn-primary">Voir</a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Aucune recette disponible</h5>
+                    </div>
+                </div>
+            {% endfor %}
+
+
+        <a href="{{ path('recipe_new') }}">Créer une recette</a>
+    </div>
+{% endblock %}
