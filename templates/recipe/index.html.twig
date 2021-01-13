@@ -4,9 +4,9 @@
 
 {% block body %}
     <div class="container" class="pt-10">
-        <h1>Recipe index</h1>
+        <h1>Recettes</h1>
 
-
+        <a href="{{ path('recipe_new') }}">Créer une recette</a>
 
             {% for recipe in recipes %}
                 <div class="card" id="{{ recipe.id }}" style="width: 18rem;">
@@ -27,6 +27,5 @@
             {% endfor %}
 
 
-        <a href="{{ path('recipe_new') }}">Créer une recette</a>
     </div>
 {% endblock %}

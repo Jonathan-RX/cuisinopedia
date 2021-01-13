@@ -67,6 +67,11 @@ class Recipe
      */
     private $created_time;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $imageFilename;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -188,6 +193,18 @@ class Recipe
     public function setCreatedTime(\DateTimeInterface $created_time): self
     {
         $this->created_time = $created_time;
+
+        return $this;
+    }
+
+    public function getImageFilename(): ?string
+    {
+        return $this->imageFilename;
+    }
+
+    public function setImageFilename(string $imageFilename): self
+    {
+        $this->imageFilename = $imageFilename;
 
         return $this;
     }
