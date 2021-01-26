@@ -1,0 +1,14 @@
+{% extends 'users/base.html.twig' %}
+
+{% block title %}{% trans %}Profile{% endtrans %}{% endblock %}
+
+{% block user_body %}
+
+            <h4>{% trans %}My username{% endtrans %}</h4>
+            <p>{{ app.user.username }}</p>
+            <h4>{% trans %}My email{% endtrans %}</h4>
+            <p>{{ app.user.email }}</p>
+            <h4>{% trans %}Password{% endtrans %}</h4>
+            <p>{% trans %}Change my password{% endtrans %}</p>
+
+{% endblock %}
